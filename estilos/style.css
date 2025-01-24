@@ -30,8 +30,7 @@ main {
 section#login {
     position: absolute;   /*Centralização da tela de login, fazendo primeiro a versão mobile first(primeiro a versão de celular)*/
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 50%; 
     overflow: hidden;   /*Tudo que estiver para fora da borda ficar escondido, para poder fazer o radius na parte da imagem*/
     background-color: white;
     width: 250px;     /*Tamanho para a tela de login, no caso para mobile first*/
@@ -40,6 +39,7 @@ section#login {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.600);
     transition: width 0.25s, height 0.25s;
     transition-timing-function: ease; /*Vai suavizar na hora das transições de uma tela pra outra*/
+    transform: translate(-50%, -50%); /*Sempre faça o "Transform" na útima linha*/
 }
 
 section#login > div#imagem {
@@ -66,15 +66,39 @@ div#formulario > p {
 
 form > div.campo {
     background-color: #c8ccce;
+    border: 2px solid #c8ccce;
     display: block;
     width: 100%;
     height: 40px;
-    border-radius: 5px;
-    margin: 5px 0px 5px 0px;
+    border-radius: 8px;
+    margin: 5px 0px;
 }
 
 div.campo > label {
     display: none;
+}
+
+div.campo > i {
+    color: #565f64;
+    /*background-color: black;*/
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo > input {
+    background-color: #00dad2;
+    font-size: 1em;
+    width: calc(100% - 44px);
+    height: 100%;
+    margin-left: 43px;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(-117%); /*Sempre faça o "Transform" na útima linha*/
+}
+
+div.campo > input:focus-within {    /*Quer dizer que quando clicar para digitar o email e senha irá fazer algo, nesse caso ficar branco*/
+    background-color: white;
 }
 
 form > input[type=submit] {
